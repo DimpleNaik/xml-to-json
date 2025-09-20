@@ -30,8 +30,9 @@ This project provides a REST API built with FastAPI that accepts an XML file as 
 
 1. Clone the repository:
     ```
-    git clone <your-repo-url>
+    git clone https://github.com/DimpleNaik/xml-to-json.git
     cd xml-to-json-fastapi
+
     ```
 2. Create a virtual environment and activate it:
     ```
@@ -57,15 +58,32 @@ This project provides a REST API built with FastAPI that accepts an XML file as 
 - Upload various XML files using Swagger UI (`/docs`)
 - Review JSON output for correct structure and content mapping
 
+
+## Frontend (React) Setup and Usage
+Node.js and npm installed
+
+The backend FastAPI server running locally (on port 8000 by default)
+
+# Setup React Frontend
+Navigate to the frontend directory (or create it if not present):
+cd xml-to-json-frontend
+
+# Install dependencies and create the React app:
+npx create-react-app .
+
+# Connect React App to Backend
+Make sure your React app is fetching from the correct backend URL (e.g., http://localhost:8000/api/xmlToJson).
+
+For local development, ensure CORS is enabled in FastAPI backend (see backend section).
+
+(Optional) Add the following proxy to your package.json in frontend to simplify API requests:
+
+"proxy": "http://localhost:8000"
+
+
+# Start the development server:
+npm start
+
 ## Deployment
 
 You can deploy this API to any cloud environment supporting FastAPI (Render, Railway, Heroku, Vercel, etc.). Ensure the `/api/xmlToJson` endpoint is publicly accessible after deployment.
-
-## Author
-
-- [Your Name]
-- [GitHub Profile]
-
----
-
-For details on parsing logic and approach, refer to `APPROACH.md`.
